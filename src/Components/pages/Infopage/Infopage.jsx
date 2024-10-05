@@ -48,22 +48,7 @@ const Timeline = () => {
     const artistImage = artistImages[artist.toLowerCase()] || '';
 
     useEffect(() => {
-        const handleScroll = () => {
-            const blocks = document.querySelectorAll('.timeline-block');
-            blocks.forEach((block) => {
-                const blockTop = block.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (blockTop <= windowHeight * 0.75) {
-                    block.classList.add('show');
-                }
-            });
-        };
-
-        handleScroll();
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        window.scrollTo(0, 0);  // Scroll to top when component mounts
     }, []);
 
     return (
