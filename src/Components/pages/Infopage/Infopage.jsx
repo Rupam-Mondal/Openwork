@@ -75,9 +75,9 @@ const Timeline = () => {
                                 <div className="w-full md:w-5/12 p-6 bg-[#eeaa6b] rounded-lg shadow-md">
                                     <h2 className="text-2xl font-semibold mb-2 text-[#3d2c2c]">{item.title}</h2>
                                     <p className="text-[#534848] mb-4">{item.description}</p>
-                                    <a href="#0" className="text-[#6d582f] font-medium hover:underline">
-                                        Read more
-                                    </a>
+                                    <div className="h-10 cursor-pointer font-light text-white border-[2px] hover:bg-white hover:text-black border-white flex justify-center items-center w-28 sm:w-32 rounded-3xl mb-6  transform hover:scale-105 duration-300">
+                                        <div>Timetable</div>
+                                    </div>
                                     <span className="block text-sm text-[#241f1f] mt-2">{item.date}</span>
                                 </div>
                             </div>
