@@ -1,10 +1,16 @@
-.timeline-block {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.7s ease-in-out;
+/* Add this in your global CSS or Tailwind setup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.timeline-block.show {
-    opacity: 1;
-    transform: translateY(0);
+.animate-fadeIn {
+    animation: fadeIn 0.7s ease forwards;
 }

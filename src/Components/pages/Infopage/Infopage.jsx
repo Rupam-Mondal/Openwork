@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import GeetabenRavai from '../../../assets/Artist/Artist1.png'
-import PurvaMantri from '../../../assets/Artist/Artist2.png'
-import krinjaldave from '../../../assets/Artist/Artist3.png'
+import GeetabenRavai from '../../../assets/Artist/Artist1.png';
+import PurvaMantri from '../../../assets/Artist/Artist2.png';
+import krinjaldave from '../../../assets/Artist/Artist3.png';
 import { useParams } from 'react-router-dom';
 
 const timelineData = [
@@ -38,15 +38,14 @@ const timelineData = [
 ];
 
 const Timeline = () => {
-    let { artist } = useParams()
+    let { artist } = useParams();
     const artistImages = {
         krinjaldave: krinjaldave,
         geetabenravai: GeetabenRavai,
         purvamantri: PurvaMantri,
-    }
+    };
 
-    const artistImage = artistImages[artist.toLowerCase()] || ''
-
+    const artistImage = artistImages[artist.toLowerCase()] || '';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -68,28 +67,18 @@ const Timeline = () => {
     }, []);
 
     return (
-
-        
         <>
-            <div className='bg-black'>
-                <div className="relative flex justify-center">
-                    {/* Fullscreen image with object-contain to prevent cutting */}
+            <div className="bg-[#3D2C2C]">
+                <div className="relative flex p-4 justify-center md:justify-end mb-8">
+                    {/* Responsive image */}
                     <img
                         src={artistImage}
                         alt={artist}
-                        className="h-[500px] object-contain w-4/5" // Increased width to 4/5
+                        className="w-full h-[290px] object-contain md:w-4/5 lg:w-[40%] lg:h-[500px] md:h-[400px]" // Responsive sizing
                     />
-
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                 </div>
 
-
-
-
-                <div className="container mx-auto p-8 relative">
-
-
+                <div className="container mx-auto p-4 md:p-8 relative">
                     <section className="relative">
                         {/* Central vertical timeline line */}
                         <div className="absolute left-1/2 transform -translate-x-1/2 top-0 h-full w-1 bg-[#eeaa6b]"></div>
@@ -97,16 +86,12 @@ const Timeline = () => {
                         {timelineData.map((item, index) => (
                             <div
                                 key={index}
-                                className={`timeline-block flex items-center mb-8 transition-all duration-700 ease-in-out ${index % 2 === 0 ? 'justify-start' : 'justify-end'
-                                    }`}
+                                className={`timeline-block flex flex-col md:flex-row items-center mb-12 transition-all duration-700 ease-in-out ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
                             >
-                                {/* Icon centered on the vertical line */}
-                                <div className="timeline-icon absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
-                                    <img src={item.icon} alt="Icon" className="w-10 h-10" />
-                                </div>
+
 
                                 {/* Card content */}
-                                <div className="w-5/12 p-6 bg-[#eeaa6b] rounded-lg shadow-md">
+                                <div className="w-full md:w-5/12 p-6 bg-[#eeaa6b] rounded-lg shadow-md">
                                     <h2 className="text-2xl font-semibold mb-2 text-[#3d2c2c]">{item.title}</h2>
                                     <p className="text-[#534848] mb-4">{item.description}</p>
                                     <a href="#0" className="text-[#6d582f] font-medium hover:underline">
@@ -114,7 +99,6 @@ const Timeline = () => {
                                     </a>
                                     <span className="block text-sm text-[#241f1f] mt-2">{item.date}</span>
                                 </div>
-
                             </div>
                         ))}
                     </section>
