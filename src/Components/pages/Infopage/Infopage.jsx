@@ -54,6 +54,7 @@ const Timeline = () => {
     return (
         <>
             <div className="bg-[#3D2C2C]">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
                 <div className="relative flex p-4 justify-center md:justify-end mb-8">
                     <img
                         src={artistImage}
@@ -64,12 +65,13 @@ const Timeline = () => {
 
                 <div className="container mx-auto p-4 md:p-8 relative">
                     <section className="relative">
+                        
                         <div className="absolute top-0 h-full w-1 bg-[#eeaa6b] left-4 md:left-1/2 transform md:-translate-x-1/2"></div>
 
                         {timelineData.map((item, index) => (
                             <div
                                 key={index}
-                                className={`timeline-block flex flex-col md:flex-row items-center mb-12 transition-all duration-700 ease-in-out ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
+                                className={`timeline-block flex flex-col z-12 md:flex-row items-center mb-12 transition-all duration-700 ease-in-out ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
                                     }`}
                             >
                                 <div className="w-full md:w-5/12 p-6 bg-[#eeaa6b] rounded-lg shadow-md">
