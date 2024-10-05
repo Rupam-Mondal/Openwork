@@ -11,6 +11,8 @@ function Routing(){
                 <Route path="/info/:artist" element={<Timeline/>}></Route>
             </Routes>
         </>
+
+        
     )
 }
 
