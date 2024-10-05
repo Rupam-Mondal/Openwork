@@ -70,27 +70,23 @@ const Timeline = () => {
         <>
             <div className="bg-[#3D2C2C]">
                 <div className="relative flex p-4 justify-center md:justify-end mb-8">
-                    {/* Responsive image */}
                     <img
                         src={artistImage}
                         alt={artist}
-                        className="w-full h-[290px] object-contain md:w-4/5 lg:w-[40%] lg:h-[500px] md:h-[400px]" // Responsive sizing
+                        className="w-full h-[290px] object-contain md:w-4/5 lg:w-[40%] lg:h-[500px] md:h-[400px]"
                     />
                 </div>
 
                 <div className="container mx-auto p-4 md:p-8 relative">
                     <section className="relative">
-                        {/* Central vertical timeline line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 h-full w-1 bg-[#eeaa6b]"></div>
+                        <div className="absolute top-0 h-full w-1 bg-[#eeaa6b] left-4 md:left-1/2 transform md:-translate-x-1/2"></div>
 
                         {timelineData.map((item, index) => (
                             <div
                                 key={index}
-                                className={`timeline-block flex flex-col md:flex-row items-center mb-12 transition-all duration-700 ease-in-out ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
+                                className={`timeline-block flex flex-col md:flex-row items-center mb-12 transition-all duration-700 ease-in-out ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
+                                    }`}
                             >
-
-
-                                {/* Card content */}
                                 <div className="w-full md:w-5/12 p-6 bg-[#eeaa6b] rounded-lg shadow-md">
                                     <h2 className="text-2xl font-semibold mb-2 text-[#3d2c2c]">{item.title}</h2>
                                     <p className="text-[#534848] mb-4">{item.description}</p>
